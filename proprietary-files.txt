@@ -117,13 +117,22 @@ bin/mtk_setprop
 #Sound
 lib{,64}/libbessound_hd_mtk.so
 lib/libbessurround_mtk.so
-lib/libaudio-resampler.so
-lib/libaudiocompensationfilter.so
-lib/libaudiocomponentengine.so
-lib/libaudiocustparam.so
-lib/libaudiodcrflt.so
+lib{,64}/libaudio-resampler.so
+lib{,64}/libaudiocompensationfilter.so
+lib{,64}/libaudiocomponentengine.so
+lib{,64}/libaudiocustparam.so
+lib{,64}/libaudiodcrflt.so
 lib/libaudiomtkdcremoval.so
-lib/libaudiosetting.so
+lib{,64}/libaudioeffect_jni.so
+lib{,64}/libaudioflinger.so
+lib{,64}/libaudiopolicyenginedefault.so
+lib{,64}/libaudiopolicymanager.so
+lib{,64}/libaudiopolicymanagerdefault.so
+lib{,64}/libaudiopolicyservice.so
+lib{,64}/libaudioresampler.so
+lib{,64}/libaudiospdif.so
+lib{,64}/libaudioutils.so
+lib{,64}/libaudiosetting.so
 lib/libwebrtc_audio_preprocessing.so
 lib{,64}/hw/audio.primary.mt6735.so
 lib{,64}/libaed.so
@@ -187,6 +196,8 @@ bin/AcdApiDaemon
 
 # Charge mode
 bin/kpoc_charger
+bin/ipod
+lib/libipod.so
 lib/libshowlogo.so
 
 #xbin
@@ -211,9 +222,9 @@ etc/firmware/ROMv2_lm_patch_1_1_hdr.bin
 etc/firmware/S_ANDRO_SFL.ini
 etc/firmware/WIFI_RAM_CODE_6735
 etc/firmware/WMT_SOC.cfg
-etc/firmware/catcher_filter_1_lwg_n.bin
-etc/firmware/dsp_1_lwg_n.bin
-etc/firmware/modem_1_lwg_n.img
+etc/firmware/catcher_filter_1_ltg_n.bin
+etc/firmware/dsp_1_ltg_n.bin
+etc/firmware/modem_1_ltg_n.img
 etc/firmware/mt6627/mt6627_fm_v1_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v1_patch.bin
 etc/firmware/mt6627/mt6627_fm_v2_coeff.bin
@@ -224,6 +235,8 @@ etc/firmware/mt6627/mt6627_fm_v4_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v4_patch.bin
 etc/firmware/mt6627/mt6627_fm_v5_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v5_patch.bin
+etc/mddb/BPLGUInfoCustomAppSrcP_MT6735_S00_MOLY_LR9_W1444_MD_LWTG_CMCC_MP_V1_P23_1_ltg_n
+etc/mddb/DbgInfo_LR9.W1444.MD.LWTG.CMCC.MP_GINREEN6735_65C_L_LTTG_DSDS_CMCC_MOLY_LR9_W1444_MD_LWTG_CMCC_MP_V1_P23_2015_05_04_16_05_1_ltg_n
 lib{,64}/libblisrc.so
 lib{,64}/libmmsdkservice.so
 lib{,64}/libcvsd_mtk.so
@@ -299,11 +312,12 @@ lib{,64}/libui_ext.so
 # PerfService settings
 etc/perfservscntbl.txt
 
-# Keys
+# Keys from official
 usr/keylayout/ACCDET.kl
-usr/keylayout/AW9201_ts.kl
+usr/keylayout/AVRCP.kl
+usr/keylayout/Generic.kl
 usr/keylayout/mtk-kpd.kl
-usr/keylayout/mtk-tpd.kl
+usr/keylayout/qwerty.kl
 
 # nvram_daemon depends on
 lib{,64}/libhwm.so
@@ -343,6 +357,7 @@ lib/libvcodec_oal.so
 lib/libMtkOmxFlacDec.so
 lib/libMtkOmxVdec.so
 lib/libMtkOmxVenc.so
+lib/libMtkOmxVdecEx.so
 lib/libHEVCdec_sa.ca7.android.so
 lib/libh264enc_sa.ca7.so
 lib/libmp4enc_sa.ca7.so
@@ -353,10 +368,6 @@ lib/libvp9dec_sa.ca7.so
 
 -lib/libcfgdevparam.so
 -lib64/libcfgdevparam.so
-
--app/Camera/Camera.apk
--app/Camera/lib/arm/libDocVfbEngineLib_m81.so
--app/Camera/lib/arm/libpanorama.so
 
 # thermal_manager dependencies and profiles
 lib/libmtcloader.so

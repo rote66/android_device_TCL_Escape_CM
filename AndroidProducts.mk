@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_meilan2.mk
+    $(LOCAL_DIR)/device_Escape_CM.mk

@@ -11,7 +11,7 @@ import /init.usb.configfs.rc
 import /init.${ro.zygote}.rc
 import /init.trace.rc
 # Include CM's extra init file
-import /init.cm.rc
+import /init.aosp.rc
 
 
 on early-init
@@ -35,7 +35,7 @@ on early-init
 on init
     sysclktz 0
 
-    loglevel 3
+    loglevel 1
     #export LD_DEBUG 1
 
     # Mix device-specific information into the entropy pool
@@ -431,6 +431,10 @@ on post-fs-data
 
     mkdir /data/anr 0775 system system
 
+    # symlink to bugreport storage location
+    rm /data/bugreports
+    symlink /data/user_de/0/com.android.shell/files/bugreports /data/bugreports
+
     # Separate location for storing security policy files on data
     mkdir /data/security 0711 system system
 
@@ -687,3 +691,13 @@ on property:persist.sys.mykloggerd=false
 service mykloggerd /system/bin/logwrapper /system/bin/cat /proc/kmsg
     class main
     disabled
+
+# init.d support
+service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
+user root
+disabled
+oneshot
+
+on property:sys.init.d=on
+start sysinit
+

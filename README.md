@@ -1,86 +1,56 @@
-Device repository for Meizu M2 Mini (LineageOS)
+Device repository for TCL_P620M (Lineageos)
 ===========================
+For Stock 3.10.65 kernel
+
+Thanks To
+Divis1969
+Oleg.svs
+Moyster
+MAD Team
 
 Getting Started
 ---------------
 
-Initialize a repository with LineageOS:
+Initialize a repository with Los14.1:
 
-    repo init -u git://github.com/divis1969/android.git -b los-14.1-meilan2
+    repo init -u git://github.com/lineageos/android.git -b cm-14.1
+    
+Sync sources:    
 
-Optinally use a specific manifest (not a tip):
-
-    repo init -u git://github.com/divis1969/android.git -b los-14.1-meilan2 -m los-14.1-meilan2-v0.6.xml
-
+    repo sync
+    
 Build the code:
-
+    
+    git clone https://github.com/rote66/android_device_TCL_Escape_CM.git -b los-14.1-ono device/TCL/Escape_CM
+    cd device/TCL/Escape_CM/patches
+    . apply-patches.sh
+    git clone https://github.com/rote66/android_vendor_TCL_Escape_CM.git -b los-14.1-ono vendor/TCL/Escape_CM
+    cd ../../
     source build/envsetup.sh
-    breakfast meilan2
-    make -j 4 bacon showcommands 2>&1 | tee build.log
+    breakfast persimmon
+    make -j8 bacon
 
 Current state
 -------------
 
-- System boots
-- Touch, screen, keyboard, central key are working
-- Wifi is working
-- Audio is working
+- boots
+- Touch, screen, keyboard 
+- Wifi 
+- Audio
 - Telephony is working (see Known Issues)
-    - USIM (3G) supported
-    - Incoming/outgoung call
-    - SMS, USSD
-    - Data connectivity
+USIM (3G) supported
+Incoming/outgoung call
+SMS, USSD
+Data connectivity
 - GPS
 - Bluetooth
 - Sensors
-- Camera
 
 Known Issues
 -------------
+- Android Camera App is not stable (hangs) ex. with location enabled
 - Meizu Camera App is crasing when switching to front camera
-- Android Camera App is crasing when recording video begins
-- Hardware OMX codecs are not working
-
-All issues: https://github.com/divis1969/android_device_meizu_meilan2/issues
-
-Change log
-----------
-
-### v0.6 (LineageOS)
-- Upmerge to the LineageOS cm-14.1 branch tip (based on android-7.1.2_r29)
-- Fix for Power HAL (Battery Saver mode)
-- Restore SELinux policy version 30
-
-### v0.5 (LineageOS)
-- Upmerge to the LineageOS cm-14.1 branch tip
-
-### v0.4 (LineageOS)
-- Fix A2DP
-- Remove Engineering app for now
-- Upmerge to the LineageOS cm-14.1 branch tip
-
-### v0.3 (LineageOS)
-- Backport LiveDisplay support in kernel from 3.18
-- Enable LiveDisplay in HAL
-- Upmerge to the LineageOS cm-14.1 branch tip
-
-### v0.2 (LineageOS)
-- Build kernel from source code (3.10.65)
-- Upmerge to the LineageOS cm-14.1 branch tip
-
-### v0.1 (LineageOS)
-- Switch from CyanogenMod to LineageOS (use LineageOS manifest, repositories)
-- Fix for offline charging
-- Remove -6dB limit for system sounds
-
-### v0.2 (CyanogenMod 14.1)
-- Fixed an issue with proximity on some devices
-- Fixed an issue with ICC IO in MTK ril (no radio with some SIM cards)
-- Fixed a modem crash caused by mtk_agps request
-- Fixed an issue with WiFi SoftAP
-- Ported power HAL from CyanogenMod 6735 (also implements Double Tap To Wake feature)
-- Ported FOTA solution from meilan2 cm-12.1
-
-### v0.1 (CyanogenMod 14.1)
-- Initial port from cm-14.0 (v0.3) to cm-14.1
-
+- Telephony crashes eventually on location request from camera.
+- Camera only have 800w
+- Video Recoder
+- Torch is crashing when the second boot
