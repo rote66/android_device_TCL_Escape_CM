@@ -11,7 +11,6 @@ cd system/netd
 git apply --ignore-space-change --ignore-whitespace -v ../../device/TCL/Escape_CM/patches/system_netd/0001-Revert-Don-t-start-tethering-if-IPv6-RPF-is-not-supp.patch
 #git apply --ignore-space-change --ignore-whitespace -v ../../device/TCL/Escape_CM/patches/system_netd/0002-Enable-Tethering.patch
 cd ../..
-cd ../../../
 cd system/sepolicy
 git apply --ignore-space-change --ignore-whitespace -v ../../device/TCL/Escape_CM/patches/system_sepolicy/0001-Revert-back-to-version-29.patch
 cd ../..

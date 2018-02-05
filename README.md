@@ -2,11 +2,19 @@ Device repository for TCL_P620M (Lineageos)
 ===========================
 For Stock 3.10.65 kernel
 
-Thanks To
+By Wyk
+
+Thanks To:
+
+LineageOS
+
 Divis1969
+
 Oleg.svs
+
 Moyster
-MAD Team
+
+Mad Team
 
 Getting Started
 ---------------
@@ -23,9 +31,9 @@ Build the code:
     
     git clone https://github.com/rote66/android_device_TCL_Escape_CM.git -b los-14.1-ono device/TCL/Escape_CM
     cd device/TCL/Escape_CM/patches
-    . apply-patches.sh
+    ./apply-patches.sh
+    cd ../../../../
     git clone https://github.com/rote66/android_vendor_TCL_Escape_CM.git -b los-14.1-ono vendor/TCL/Escape_CM
-    cd ../../
     source build/envsetup.sh
     breakfast persimmon
     make -j8 bacon
@@ -49,7 +57,7 @@ Data connectivity
 Known Issues
 -------------
 - Android Camera App is not stable (hangs) ex. with location enabled
-- Meizu Camera App is crasing when switching to front camera
+- Meizu Camera App is crasing when switching to front camera (Meizu Camera not add at now)
 - Telephony crashes eventually on location request from camera.
 - Camera only have 800w
 - Video Recoder
