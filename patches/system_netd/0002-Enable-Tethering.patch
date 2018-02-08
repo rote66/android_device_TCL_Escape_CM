@@ -1,27 +1,30 @@
-From a5b0beeabc10bf74c30e36ed44d1078c1dc73820 Mon Sep 17 00:00:00 2001
-From: olegsvs <oleg.texet@gmail.com>
-Date: Tue, 13 Dec 2016 17:29:08 +0000
-Subject: [PATCH 2/2] Enable-Tethering
+From 45587bb7db39a02382abd143ac02660df0fc072a Mon Sep 17 00:00:00 2001
+From: rote66 <pontifex23872388@gmail.com>
+Date: Thu, 8 Feb 2018 19:18:50 +0100
+Subject: [PATCH 2/2] Enable Tethering
 
-Change-Id: I40a101ae11d47dffed553e2be2f39a15d7b022bd
+Signed-off-by: rote66 <pontifex23872388@gmail.com>
 ---
  server/SoftapController.cpp | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
+ mode change 100755 => 100644 server/SoftapController.cpp
 
 diff --git a/server/SoftapController.cpp b/server/SoftapController.cpp
-index 27ed684..3699c87 100755
+old mode 100755
+new mode 100644
+index 4a7c8d7..8461e43
 --- a/server/SoftapController.cpp
 +++ b/server/SoftapController.cpp
-@@ -54,7 +54,7 @@ using android::base::WriteStringToFile;
+@@ -53,7 +53,7 @@ using android::base::WriteStringToFile;
+ #include "wpa_ctrl.h"
  #endif
  
+-std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/wlan0"));
++std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/ap0"));
  #ifdef LIBWPA_CLIENT_EXISTS
--static const char HOSTAPD_UNIX_FILE[]    = "/data/misc/wifi/hostapd/wlan0";
-+static const char HOSTAPD_UNIX_FILE[]    = "/data/misc/wifi/hostapd/ap0";
  static const char HOSTAPD_DHCP_DIR[]    = "/data/misc/dhcp";
  #endif
- static const char HOSTAPD_CONF_FILE[]    = "/data/misc/wifi/hostapd.conf";
-@@ -282,7 +282,7 @@ int SoftapController::setSoftap(int argc, char *argv[]) {
+@@ -289,7 +289,7 @@ int SoftapController::setSoftap(int argc, char *argv[]) {
              "hw_mode=%c\n"
              "ignore_broadcast_ssid=%d\n"
              "wowlan_triggers=any\n",
@@ -31,5 +34,5 @@ index 27ed684..3699c87 100755
      std::string fbuf;
      if (argc > 7) {
 -- 
-1.9.1
+2.16.1
 
