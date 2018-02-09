@@ -85,6 +85,26 @@ PRODUCT_PACKAGES += \
     libperfservicenative \
     libcurl
 
+# LiveDisplay
+PRODUCT_PACKAGES += libjni_livedisplay
+
+# Include explicitly to work around Facelock issues
+PRODUCT_PACKAGES += libprotobuf-cpp-full
+
+# USB
+PRODUCT_PACKAGES += com.android.future.usb.accessory
+
+# Keyhandler
+PRODUCT_PACKAGES += \
+    CMActions \
+    com.cyanogenmod.keyhandler
+
+# libstlport
+PRODUCT_PACKAGES += libstlport
+
+# Ion
+PRODUCT_PACKAGES += libion
+
 PRODUCT_PACKAGES += meizupshelper
 
 PRODUCT_PACKAGES += power.mt6735
@@ -104,7 +124,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
-    audio.r_submix.default
+    audio.r_submix.default \
+    libtinyalsa \
+    libtinycompress \
+    libtinyxml
 
 # Supplementary/Addon
 PRODUCT_PACKAGES += \

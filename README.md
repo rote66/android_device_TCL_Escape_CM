@@ -16,6 +16,10 @@ Moyster
 
 Mad Team
 
+danielhk
+
+and more
+
 Getting Started
 ---------------
 
@@ -33,32 +37,51 @@ Build the code:
     cd device/TCL/Escape_CM/patches
     ./apply-patches.sh
     cd ../../../../
-    git clone https://github.com/rote66/android_vendor_TCL_Escape_CM.git -b los-14.1-ono vendor/TCL/Escape_CM
+    git clone https://github.com/rote66/android_vendor_TCL_Escape_CM.git -b los14.1_ono vendor/TCL/Escape_CM
     source build/envsetup.sh
-    breakfast persimmon
-    make -j8 bacon
+    lunch lineage_Escape_CM-userdebug
+    make -j 4 bacon showcommands 2>&1 | tee build.log
 
 Current state
+
 -------------
 
-- boots
-- Touch, screen, keyboard 
-- Wifi 
-- Audio
-- Telephony is working (see Known Issues)
-USIM (3G) supported
-Incoming/outgoung call
-SMS, USSD
-Data connectivity
+- System boots
+
+- Touch, screen, keyboard, central key are working
+
+- Wifi is working
+
+- Audio is working
+
+- Telephony is working 
+
+- USIM (3G) supported
+
+- Incoming/outgoung call
+
+- SMS, USSD
+
+- Data connectivity
+
 - GPS
+
 - Bluetooth
+
 - Sensors
 
+- Camera
+
 Known Issues
+
 -------------
-- Android Camera App is not stable (hangs) ex. with location enabled
-- Meizu Camera App is crasing when switching to front camera (Meizu Camera not add at now)
-- Telephony crashes eventually on location request from camera.
-- Camera only have 800w
-- Video Recoder
-- Torch is crashing when the second boot
+
+- Meizu Camera App is crasing when switching to front camera
+
+- Android Camera App is crasing when recording video begins
+
+- Camera only 800w
+
+- Torch can not be used sometimes
+
+
