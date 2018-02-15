@@ -31,6 +31,10 @@ Sync sources:
 
     repo sync
     
+Add 
+  
+   git clone http://github.com/LineageOS/android_packages_resources_devicesettings.git -b cm-14.1 packages/resources/devicesettings
+
 Build the code:
     
     git clone https://github.com/rote66/android_device_TCL_Escape_CM.git -b los-14.1-ono device/TCL/Escape_CM

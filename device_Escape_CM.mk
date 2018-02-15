@@ -89,23 +89,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += libjni_livedisplay
 
 # Include explicitly to work around Facelock issues
-PRODUCT_PACKAGES += libprotobuf-cpp-full
+#PRODUCT_PACKAGES += libprotobuf-cpp-full
 
 # USB
 PRODUCT_PACKAGES += com.android.future.usb.accessory
 
-# Keyhandler
-PRODUCT_PACKAGES += \
-    CMActions \
-    com.cyanogenmod.keyhandler
-
-# libstlport
-PRODUCT_PACKAGES += libstlport
-
 # Ion
 PRODUCT_PACKAGES += libion
 
-PRODUCT_PACKAGES += meizupshelper
+# Doze (test)
+PRODUCT_PACKAGES += TCLDoze
 
 PRODUCT_PACKAGES += power.mt6735
 
@@ -130,8 +123,7 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Supplementary/Addon
-PRODUCT_PACKAGES += \
-    MtkCamera libDocVfbEngineLib_m81 libpanorama
+PRODUCT_PACKAGES += Snap 
 
 #    EngineerMode \
 #libmeizucamera

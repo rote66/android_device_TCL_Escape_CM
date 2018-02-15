@@ -55,8 +55,9 @@ BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 TARGET_KERNEL_CONFIG := lineage_ono_defconfig
 TARGET_KERNEL_SOURCE := kernel/TCL/Escape_CM
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-#TARGET_PREBUILT_SEPOLICY := $(DEVICE_PATH)/prebuilt/sepolicy
-PRODUCE_BLOCK_BASED_OTA := false
+# end of commented lines
+#Dat / zip
+#PRODUCE_BLOCK_BASED_OTA := false
 
 #extracted from /proc/partinfo
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
@@ -95,7 +96,7 @@ MTK_HARDWARE := true
 #COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE -DMTK_AOSP_ENHANCEMENT
 
 #Not use DAT
-BLOCK_BASED_OTA :=false
+#BLOCK_BASED_OTA :=false
 
 # Display
 USE_OPENGL_RENDERER := true
